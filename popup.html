@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>Popup Eraser</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="pe-header">
+    <div class="pe-logo">
+      <span class="pe-logo-mark">✂︎</span>
+      <span class="pe-logo-text">Popup Eraser</span>
+    </div>
+    <div class="pe-host" id="pe-host">—</div>
+  </header>
+
+  <main>
+    <!-- メインアクション: クリック削除モード起動 -->
+    <button id="pe-start" class="pe-primary">
+      <span class="pe-primary-icon">🎯</span>
+      <span class="pe-primary-text">
+        <strong>クリック削除モードを開始</strong>
+        <small>消したいポップアップをクリック</small>
+      </span>
+      <span class="pe-kbd">Alt + Shift + E</span>
+    </button>
+
+    <!-- サブアクション -->
+    <div class="pe-row">
+      <button id="pe-release" class="pe-secondary" title="ページのスクロールロックを解除します">
+        🔓 スクロール解除
+      </button>
+    </div>
+
+    <hr class="pe-sep" />
+
+    <!-- サイト別 ON/OFF -->
+    <section class="pe-section">
+      <div class="pe-toggle">
+        <label class="pe-switch">
+          <input type="checkbox" id="pe-site-enabled" />
+          <span class="pe-slider"></span>
+        </label>
+        <div class="pe-toggle-label">
+          <strong>このサイトで有効</strong>
+          <small id="pe-site-host-small">—</small>
+        </div>
+      </div>
+
+      <div class="pe-toggle">
+        <label class="pe-switch">
+          <input type="checkbox" id="pe-protect-cookie" />
+          <span class="pe-slider"></span>
+        </label>
+        <div class="pe-toggle-label">
+          <strong>Cookie同意バナーを保護</strong>
+          <small>誤って法的バナーを削除しないように</small>
+        </div>
+      </div>
+
+      <div class="pe-toggle">
+        <label class="pe-switch">
+          <input type="checkbox" id="pe-default-enabled" />
+          <span class="pe-slider"></span>
+        </label>
+        <div class="pe-toggle-label">
+          <strong>自動削除モード</strong>
+          <small>ポップアップを自動検出して削除（OFF時は ⌥⇧E で手動）</small>
+        </div>
+      </div>
+    </section>
+
+    <hr class="pe-sep" />
+
+    <details class="pe-help">
+      <summary>使い方</summary>
+      <ol>
+        <li>「クリック削除モードを開始」を押す</li>
+        <li>ページ上の消したいポップアップをクリック</li>
+        <li>背景の暗いオーバーレイも一緒に削除されます</li>
+        <li>終了は <span class="pe-kbd-inline">ESC</span> または右クリック</li>
+      </ol>
+    </details>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

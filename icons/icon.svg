@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff3b30"/>
+      <stop offset="100%" stop-color="#ff6b60"/>
+    </linearGradient>
+  </defs>
+  <!-- 角丸の赤い四角（拡張機能アイコン地） -->
+  <rect x="6" y="6" width="116" height="116" rx="26" ry="26" fill="url(#g)"/>
+  <!-- 内側の白いポップアップ -->
+  <rect x="28" y="34" width="72" height="50" rx="6" ry="6" fill="#fff" opacity="0.95"/>
+  <!-- 閉じるバツ（大きな白いX）でポップアップを「消す」イメージ -->
+  <g stroke="#1d1d1f" stroke-width="6" stroke-linecap="round">
+    <line x1="44" y1="48" x2="84" y2="74"/>
+    <line x1="84" y1="48" x2="44" y2="74"/>
+  </g>
+  <!-- ハサミの装飾（右下） -->
+  <g transform="translate(74,76)" fill="#fff">
+    <circle cx="6" cy="22" r="6"/>
+    <circle cx="26" cy="22" r="6"/>
+    <path d="M10 22 L34 6 M22 22 L34 38" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Popup Eraser - クリックで消すポップアップブロッカー",
+  "short_name": "Popup Eraser",
+  "version": "1.0.0",
+  "description": "ポップアップやライトボックスをクリック1つでHTMLごと削除。スクロールロックも解除して快適なブラウジングを取り戻します。",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Popup Eraser",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "commands": {
+    "toggle-eraser": {
+      "suggested_key": {
+        "default": "Alt+Shift+E",
+        "mac": "Alt+Shift+E"
+      },
+      "description": "クリック削除モードのON/OFFを切り替え"
+    }
+  }
+}

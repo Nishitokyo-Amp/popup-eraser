@@ -1,0 +1,159 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1d1d1f;
+  --muted: #6e6e73;
+  --line: #e5e5ea;
+  --accent: #ff3b30;
+  --accent-2: #ff6b60;
+  --good: #34c759;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1c1e;
+    --fg: #f5f5f7;
+    --muted: #98989d;
+    --line: #38383a;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  width: 320px;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+               "Yu Gothic UI", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 13px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { padding: 12px 14px 14px; }
+
+.pe-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px 8px;
+  border-bottom: 1px solid var(--line);
+}
+.pe-logo {
+  display: flex; align-items: center; gap: 6px;
+  font-weight: 700; font-size: 14px;
+}
+.pe-logo-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  background: var(--accent); color: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+}
+.pe-host {
+  font-size: 11px; color: var(--muted);
+  max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* メインボタン */
+.pe-primary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 12px;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  box-shadow: var(--shadow);
+  transition: transform 0.08s ease, opacity 0.15s ease;
+}
+.pe-primary:hover { opacity: 0.96; }
+.pe-primary:active { transform: scale(0.98); }
+.pe-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.pe-primary-icon { font-size: 22px; line-height: 1; }
+.pe-primary-text { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.pe-primary-text strong { font-weight: 600; font-size: 13.5px; }
+.pe-primary-text small { font-size: 11px; opacity: 0.92; }
+.pe-kbd {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 5px;
+  padding: 2px 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+}
+
+.pe-row {
+  display: flex; gap: 8px; margin-top: 10px;
+}
+.pe-secondary {
+  flex: 1;
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font: inherit;
+}
+.pe-secondary:hover { background: var(--line); }
+
+.pe-sep { border: none; border-top: 1px solid var(--line); margin: 14px 0 10px; }
+
+.pe-section { display: flex; flex-direction: column; gap: 10px; }
+
+.pe-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pe-toggle-label { flex: 1; display: flex; flex-direction: column; }
+.pe-toggle-label strong { font-weight: 600; font-size: 12.5px; }
+.pe-toggle-label small { font-size: 10.5px; color: var(--muted); margin-top: 1px; }
+
+/* iOS風スイッチ */
+.pe-switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.pe-switch input { opacity: 0; width: 0; height: 0; }
+.pe-slider {
+  position: absolute; cursor: pointer; inset: 0;
+  background: #c7c7cc;
+  border-radius: 22px;
+  transition: background 0.15s ease;
+}
+.pe-slider::before {
+  content: "";
+  position: absolute;
+  height: 18px; width: 18px;
+  left: 2px; bottom: 2px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.pe-switch input:checked + .pe-slider { background: var(--good); }
+.pe-switch input:checked + .pe-slider::before { transform: translateX(16px); }
+
+.pe-help { margin-top: 4px; font-size: 11.5px; color: var(--muted); }
+.pe-help summary { cursor: pointer; user-select: none; }
+.pe-help ol { padding-left: 18px; margin: 8px 0 0; }
+.pe-help li { margin: 4px 0; }
+.pe-kbd-inline {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--line);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 10.5px;
+}
