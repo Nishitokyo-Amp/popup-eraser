@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Popup Eraser - クリックで消すポップアップブロッカー",
   "short_name": "Popup Eraser",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ポップアップやライトボックスをクリック1つでHTMLごと削除。スクロールロックも解除して快適なブラウジングを取り戻します。",
   "permissions": [
     "storage",
